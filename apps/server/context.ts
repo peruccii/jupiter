@@ -1,10 +1,10 @@
 import { inferAsyncReturnType, initTRPC, TRPCError } from '@trpc/server';
-import * as trpcExpress from '@trpc/server/adapters/express';
+import { CreateFastifyContextOptions } from '@trpc/server/adapters/fastify';
 
 export const createContext = ({
   req,
   res,
-}: trpcExpress.CreateExpressContextOptions) => {
+}: CreateFastifyContextOptions) => {
   console.log(' Validate token');
   const token = req.headers.authorization;
 
